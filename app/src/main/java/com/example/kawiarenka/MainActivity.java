@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnSnacks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Snacks.class);
+                Intent intent = new Intent(MainActivity.this, SnacksActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
@@ -44,5 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
+
     }
 }
