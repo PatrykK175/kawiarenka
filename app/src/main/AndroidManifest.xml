@@ -29,7 +29,7 @@
             android:theme="@style/Theme.Kawiarenka" />
 
         <activity
-            android:name=".Snacks"
+            android:name=".SnacksActivity"
             android:exported="true"
             android:theme="@style/Theme.Kawiarenka" />
 
