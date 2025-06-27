@@ -38,6 +38,10 @@
             android:exported="true"
             android:theme="@style/Theme.Kawiarenka" />
 
+        <activity
+            android:name=".SummaryActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Kawiarenka" />
     </application>
 
 </manifest>

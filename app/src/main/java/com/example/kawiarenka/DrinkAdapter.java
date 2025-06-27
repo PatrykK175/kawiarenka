@@ -38,9 +38,10 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
         holder.description.setText(drink.getDescription());
         holder.price.setText(String.format("%.2f zł", drink.getPrice()));
 
-        holder.itemView.setOnClickListener(v ->
-                Toast.makeText(context, "Dodano: " + drink.getName(), Toast.LENGTH_SHORT).show()
-        );
+        holder.itemView.setOnClickListener(v -> {
+            OrderManager.getInstance().addDrink(drink);
+            Toast.makeText(context, "Dodano: " + drink.getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override

@@ -31,7 +31,7 @@ public class SnacksActivity extends AppCompatActivity {
 
         SnackDatabaseHelper dbHelper = new SnackDatabaseHelper(this);
         List<Snack> snacks = dbHelper.getAllSnacks();
-        snackAdapter = new SnackAdapter(snacks);
+        snackAdapter = new SnackAdapter(this, snacks);
         recyclerView.setAdapter(snackAdapter);
     }
 
