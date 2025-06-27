@@ -3,6 +3,27 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent" android:padding="16dp">
 
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Imię i nazwisko"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numer stolika"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/editNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Uwagi do zamówienia"
+        android:layout_marginBottom="16dp"/>
+
     <TextView
         android:id="@+id/summaryList"
         android:layout_width="match_parent"
@@ -37,6 +58,13 @@
             android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wyślij e-mail"/>
+            android:text="Wyślij e-mail"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wyczyść koszyk"/>
     </LinearLayout>
 </LinearLayout>
