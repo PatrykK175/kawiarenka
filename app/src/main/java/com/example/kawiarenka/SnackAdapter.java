@@ -1,5 +1,6 @@
 package com.example.kawiarenka;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,16 +14,18 @@ import java.util.List;
 
 public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.SnackViewHolder> {
 
-    private List<Snack> snackList;
+    private final List<Snack> snackList;
+    private final Context context;
 
-    public SnackAdapter(List<Snack> snacks) {
+    public SnackAdapter(Context context, List<Snack> snacks) {
+        this.context = context;
         this.snackList = snacks;
     }
 
     @NonNull
     @Override
     public SnackViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
+        View view = LayoutInflater.from(context)
                 .inflate(R.layout.snack_item, parent, false);
         return new SnackViewHolder(view);
     }
@@ -35,8 +38,8 @@ public class SnackAdapter extends RecyclerView.Adapter<SnackAdapter.SnackViewHol
         holder.price.setText(String.format("%.2f zł", snack.getPrice()));
 
         holder.itemView.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), "Dodano: " + snack.getName(), Toast.LENGTH_SHORT).show();
-            // Dodaj przekąskę do zamówienia tutaj, jeśli masz system zamówień
+            OrderManager.getInstance().addSnack(snack);
+            Toast.makeText(context, "Dodano: " + snack.getName(), Toast.LENGTH_SHORT).show();
         });
     }
 
